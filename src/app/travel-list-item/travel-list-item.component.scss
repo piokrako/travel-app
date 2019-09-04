@@ -1,0 +1,30 @@
+.trv-travel_list_item {
+
+  &_destination {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  &_description {
+    margin: 8px 0;
+  }
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+  }
+}
+
+.trv-button--delete {
+  opacity: 0.65;
+  min-width: 36px;
+  &:hover {
+    transition: all 200ms ease-out;
+    background: #ee5844;
+    color: #fff;
+    opacity: 1;
+  }
+}

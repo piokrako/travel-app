@@ -1,60 +1,96 @@
-<button class="trv-button trv-button--primary" (click)="toggleDialog()">
-  Add
+<button
+  class="trv-button trv-button--primary trv-button--cta"
+  (click)="toggleDialog()"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="feather feather-plus"
+  >
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+  </svg>
 </button>
 
 <div class="trv-modal" *ngIf="showDialog">
   <form class="trv-modal__content" #addTravelForm="ngForm">
-    <button
-      class="trv-button trv-button--ghost trv-button--close"
-      (click)="toggleDialog()"
-    >
-      Close dialog
-    </button>
-    <label for="City">City</label>
-    <input
-      name="City"
-      class="trv-travel_input trv-travel_input--required trv-travel_input--destination"
-      placeholder="Where do you want to go?"
-      autofocus=""
-      [(ngModel)]="newTravel.city"
-      required
-      #cityName="ngModel"
-    />
-    <div
-      class="trv-error"
-      *ngIf="!cityName.valid && cityName.touched"
-    >
-      The field "City" is required!
+
+    <div class="trv-modal__content-header">
+        <h2>Plan a new journey</h2>
+        <button
+        class="trv-button trv-button--ghost trv-button--close"
+        (click)="toggleDialog()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-x"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+     </div>
+    
+
+
+    <div class="trv-modal__content-container">
+      
+      <input
+        name="City"
+        class="trv-travel__input trv-travel__input-required trv-travel__input-destination"
+        [class.trv-travel__input-error]="!cityName.valid && cityName.touched"
+        placeholder="Where do you want to go?"
+        autofocus=""
+        [(ngModel)]="newTravel.city"
+        required
+        #cityName="ngModel"
+      />
+      <input
+        name="description"
+        class="trv-travel__input trv-travel__input-description"
+        placeholder="Why do you want to go there?"
+        autofocus=""
+        [(ngModel)]="newTravel.description"
+      />
+      <input
+        name="Date"
+        class="trv-travel__input trv-travel__input-date"
+        placeholder="When do you want to go there?"
+        autofocus=""
+        [(ngModel)]="newTravel.date"
+      />
+      
     </div>
 
-    <label for="Description">Description</label>
-    <input
-      name="description"
-      class="trv-travel_input trv-travel_input--description"
-      placeholder="Why do you want to go there?"
-      autofocus=""
-      [(ngModel)]="newTravel.description"
-    />
-    <label for="Date"></label>
-    <input
-      name="Date"
-      class="trv-travel_input trv-travel_input--date"
-      placeholder="When do you want to go there?"
-      autofocus=""
-      [(ngModel)]="newTravel.date"
-    />
-    <button
-      class="trv-travel_button trv-travel_button--secondary"
-      (click)="this.addTravelForm.reset()"
-    >
-      Clear
-    </button>
-    <button
-    type="button"
-      class="ntrv-travel_button ntrv-travel_button--primary"
-      (click)="addTravel(addTravelForm)"
-    >
-      Save
-    </button>
+    <div class="trv-modal__content-footer">
+        <button
+        class="trv-button trv-button--secondary"
+        (click)="this.addTravelForm.reset()"
+      >
+        Clear
+      </button>
+      <button
+        type="button"
+        class="trv-button trv-button--primary"
+        (click)="addTravel(addTravelForm)"
+      >
+        Save
+      </button>
+    </div>
   </form>
 </div>

@@ -31,6 +31,12 @@ export class AppModule {
   }
 
   get travels() {
+    let travel1 = new Travel({id: 1, city: 'Łódź', description: 'Hometown', date: '28/08/2019'});
+    let travel2 = new Travel({id: 2, city: 'Poznań', description: 'Current town', date: '29/08/2019'});
+    this.travelDataService.addTravel(travel1);
+    this.newTravel = new Travel();
+    this.travelDataService.addTravel(travel2);
+    this.newTravel = new Travel();
     return this.travelDataService.getAllTravels();
   }
 }

@@ -1,0 +1,12 @@
+@import '../../styles.var.scss';
+
+.trv-header {
+  margin: 32px 0 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.trv-h1 {
+  font-family: 'Walter Turncoat', cursive;
+  color: darken($accent , 20)
+}
