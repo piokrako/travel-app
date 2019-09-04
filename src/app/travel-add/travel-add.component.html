@@ -1,0 +1,43 @@
+<button class="trv-button trv-button--primary" (click)="showAddTravelDialog()">
+  Add
+</button>
+
+<div id="addTravelModal" class="trv-modal" *ngIf="showDialog">
+  <div class="trv-modal__content">
+    <button
+      class="trv-button trv-button--ghost trv-button--close"
+      (click)="hideAddTravelDialog()"
+    >
+      Close dialog
+    </button>
+
+    <input
+      class="trv-travel_input trv-travel_input--required trv-travel_input--destination"
+      placeholder="Where do you want to go?"
+      autofocus=""
+      [(ngModel)]="newTravel.city"
+      required
+    />
+    <input
+      class="trv-travel_input ntrv-travel_input--description"
+      placeholder="Why do you want to go there?"
+      autofocus=""
+      [(ngModel)]="newTravel.description"
+    />
+    <input
+      class="trv-travel_input ntrv-travel_input--date"
+      placeholder="When do you want to go there?"
+      autofocus=""
+      [(ngModel)]="newTravel.date"
+    />
+    <button class="trv-travel_button trv-travel_button--secondary">
+      Cancel
+    </button>
+    <button
+      class="ntrv-travel_button ntrv-travel_button--primary"
+      (click)="addTravel()"
+    >
+      Save
+    </button>
+  </div>
+</div>

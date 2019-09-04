@@ -8,5 +8,4 @@ export class Travel {
     Object.assign(this, values);
   }
 
-
 }

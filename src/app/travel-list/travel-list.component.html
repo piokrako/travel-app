@@ -1,0 +1,10 @@
+<section class="trv-travel">
+  <span class="trv-travel_no_data" *ngIf="travels.length === 0"
+    >Ooops... No data to show!</span
+  >
+  <ul class="trv-travel_list" *ngIf="travels.length > 0">
+    <li class="trv-travel_list_item" *ngFor="let travel of travels">
+      <app-travel-list-item [travel]="travel" (remove)="onRemoveTravel($event)"></app-travel-list-item>
+    </li>
+  </ul>
+</section>

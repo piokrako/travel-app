@@ -1,0 +1,6 @@
+<label class="trv-travel_list_item_destination">{{ travel.city }}</label>
+<div class="trv-travel_list_item_description" *ngIf="travel.description">{{travel.description}}</div>
+<div class="trv-travel_list_item_date" *ngIf="travel.date">{{travel.date}}</div>
+<button class="trv-button trv-button--secondary" (click)="removeTravel(travel)">
+  Remove
+</button>
