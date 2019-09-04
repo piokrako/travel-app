@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Travel } from "../travel";
 import { TravelDataService } from '../travel-data.service';
+import { NgForm } from '@angular/forms';
+import { Capability } from 'protractor';
 
 @Component({
   selector: "app-travel-add",
@@ -15,21 +17,16 @@ export class TravelAddComponent {
   
   constructor(private travelDataService: TravelDataService) {}
 
-  showAddTravelDialog() {
-    this.showDialog = true;
+  toggleDialog() {
+    this.showDialog = !this.showDialog;
   }
 
-  hideAddTravelDialog() {
-    this.showDialog = false;
-  }
-
-  addTravel() {
-    this.travelDataService.addTravel(this.newTravel);
-    this.newTravel = new Travel();
-    this.hideAddTravelDialog();
-    this.newTravel.city = null;
-    this.newTravel.description = null;
-    this.newTravel.date = null;
+  addTravel(form: NgForm) {
+    if(form.valid) {
+      this.travelDataService.addTravel(this.newTravel);
+      this.newTravel = new Travel();
+      this.toggleDialog();
+    }
   }
 
 }
