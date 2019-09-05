@@ -1,0 +1,15 @@
+@import '../../styles.var.scss';
+.trv-footer {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+  .trv-cridentials {
+    a {
+      font-weight: bold;
+      color: $primary;
+      &:hover {
+        color: darken($primary, 20)
+      }
+    }
+  }
+}

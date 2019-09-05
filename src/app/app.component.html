@@ -1,24 +1,4 @@
-<section class="trv-app">
-  <header class="trv-header">
-    <h1>{{title}}</h1>
-    <input class="ntrv-travel_input" placeholder="What do you want to go?" autofocus="" [(ngModel)]="newTravel.city" (keyup.enter)="addTravel()">
-  </header>
-  <section class="trv-travel">
-      <span class="trv-travel_no_data" *ngIf="travels.length === 0">Ooops... No data to show!</span>
-       <ul class="trv-travel_list" *ngIf="travels.length > 0">
-         <li *ngFor="let travel of travels">
-           <div class="view">
-             <label>{{ travel.city }}</label>
-             <button class="trv-remove" (click)="removeTravel(travel)">
-               Remove
-             </button>
-           </div>
-         </li>
-       </ul>
-     </section>
-  <footer class="trv-footer">
-    <span class="trv-cridentials"
-      >Created by <a href="https://github.com/piokrako">piokrako</a></span
-    >
-  </footer>
-</section>
+<app-header></app-header>
+<app-travel-list [travels]="travels" (remove)="onRemoveTravel($event)"></app-travel-list>
+<app-travel-add></app-travel-add>
+<app-footer></app-footer>
