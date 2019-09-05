@@ -4,7 +4,7 @@
   >
   <ul class="trv-travel_list" *ngIf="travels.length > 0">
     <li class="trv-travel_list_item" *ngFor="let travel of travels">
-      <app-travel-list-item [travel]="travel" (remove)="onRemoveTravel($event)"></app-travel-list-item>
+      <app-travel-list-item [travel]="travel" (update)="onUpdateTravel($event)" (remove)="onRemoveTravel($event)"></app-travel-list-item>
     </li>
   </ul>
   <app-travel-footer [travels]="travels"></app-travel-footer>

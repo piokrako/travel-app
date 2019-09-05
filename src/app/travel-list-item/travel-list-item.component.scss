@@ -1,3 +1,5 @@
+@import '../../styles.var.scss';
+
 :host {
   width: 100%;
 }
@@ -22,13 +24,19 @@
   }
 }
 
-.trv-button--delete {
+.trv-button--delete, .trv-button--update {
   opacity: 0.65;
   min-width: 36px;
   &:hover {
     transition: all 200ms ease-out;
-    background: #ee5844;
     color: #fff;
+    background: $accent;
     opacity: 1;
+  }
+}
+
+.trv-button--delete {
+  &:hover {
+    background: #ee5844;
   }
 }

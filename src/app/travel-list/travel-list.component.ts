@@ -10,9 +10,16 @@ export class TravelListComponent {
   travels: Travel[];
 
   @Output()
+  update: EventEmitter<Travel> = new EventEmitter();
+
+  @Output()
   remove: EventEmitter<Travel> = new EventEmitter();
 
   constructor() {}
+
+  onUpdateTravel(travel: Travel) {
+    this.update.emit(travel);
+  }
 
   onRemoveTravel(travel: Travel) {
     this.remove.emit(travel);
