@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 # TravelListApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
+
+Preview on https://travel-app-9way6nb6w.now.sh/
 
 ## Development server
 
@@ -29,4 +30,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # travel-app
 Website created with Angular that allows you to perform CRUD tasks on list data.
->>>>>>> 2afa87ac0119303f56b091d07977f4e4e0758a9d
