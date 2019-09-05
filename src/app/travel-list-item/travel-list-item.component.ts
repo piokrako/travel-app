@@ -9,10 +9,16 @@ import { Travel } from "../travel";
 export class TravelListItemComponent {
   @Input() travel: Travel[];
 
+  @Output() update: EventEmitter<Travel> = new EventEmitter();
+
   @Output() remove: EventEmitter<Travel> = new EventEmitter();
 
   constructor() {}
 
+  updateTravel(travel: Travel) {
+    console.log('travel-list-item says: ', travel)
+    this.update.emit(travel);
+  }
   removeTravel(travel: Travel) {
     this.remove.emit(travel);
   }

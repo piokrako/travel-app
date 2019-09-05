@@ -1,4 +1,4 @@
 <app-header></app-header>
-<app-travel-list [travels]="travels" (remove)="onRemoveTravel($event)"></app-travel-list>
+<app-travel-list [travels]="travels" (update)="onUpdateTravel($event)" (remove)="onRemoveTravel($event)"></app-travel-list>
 <app-travel-add></app-travel-add>
 <app-footer></app-footer>

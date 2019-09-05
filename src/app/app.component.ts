@@ -16,6 +16,10 @@ export class AppComponent {
     this.travelDataService.deleteTravelById(travel.id);
   }
 
+  onUpdateTravel(travel: Travel) {
+    this.travelDataService.updateTravelById(travel.id);
+  }
+
   get travels() {
     return this.travelDataService.getAllTravels();
   }
